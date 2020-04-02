@@ -73,7 +73,7 @@ import star from './star/star'
     methods: {
       showMoreMsg: function () {
         this.val = this.$route.query.name
-        const serchUrl = 'https://api.douban.com/v2/movie/search?q=' + this.val
+        const serchUrl = 'https://api.douban.com/v2/movie/search?apikey=0b2bdeda43b5688921839c8ecb20399b&q=' + this.val
         this.$http.jsonp(serchUrl)
         .then(function (response) {
           this.guodu = false

@@ -5,7 +5,7 @@
       <div class="in-movies-wrap" >
         <div class="in-movies-show" v-for="(item, index) in in_theaters_data_body_subjects" @click="showMoreMsg(item.id)">
           <div class="in-movies-show-child">
-            <div class="posters"><img :src="item.images.small" :alt="item.alt"></div>
+            <div class="posters"><img :src="item.images.small" :alt="item.alt" height="125" width="95"></div>
             <div class="movieMsg">
               <h2>{{ item.title }}</h2>
               <star :score="item.rating.average"></star>
@@ -44,7 +44,7 @@ export default {
     star: star
   },
   mounted: function () {
-    this.$http.jsonp('https://api.douban.com/v2/movie/in_theaters')
+    this.$http.jsonp('https://api.douban.com/v2/movie/in_theaters?apikey=0b2bdeda43b5688921839c8ecb20399b&city=%E8%8A%9C%E6%B9%96&start=0&count=15&client=&udid=')
         .then(function (response) {
           this.guodu = false
           this.in_theaters_data = response

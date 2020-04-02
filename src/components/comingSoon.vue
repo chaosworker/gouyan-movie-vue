@@ -6,7 +6,7 @@
       <div class="co-movies-wrap" >
         <div class="co-movies-show" v-for="(item, index) in coming_soon_data_body_subjects" @click="showMoreMsg(item.id)">
           <div class="co-movies-show-child">
-            <div class="co-posters"><img :src="item.images.small" :alt="item.alt"></div>
+            <div class="co-posters"><img :src="item.images.small" :alt="item.alt" height="125" width="95"></div>
             <div class="co-movieMsg">
               <h2>{{ item.title }}</h2>
               <p>导演: {{ item.directors[0].name}}</p>
@@ -41,7 +41,7 @@ export default {
     'v-header': vHeader
   },
   mounted: function () {
-    this.$http.jsonp('https://api.douban.com/v2/movie/coming_soon')
+    this.$http.jsonp('https://api.douban.com/v2/movie/coming_soon?apikey=0b2bdeda43b5688921839c8ecb20399b&city=%E8%8A%9C%E6%B9%96&start=0&count=10&client=&udid=')
         .then(function (response) {
           this.guodu = false
           this.coming_soon_data = response

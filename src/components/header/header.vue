@@ -6,13 +6,13 @@
           <img src="../../assets/logo.png">
         </div>
         <div class="v-load-title">
-          <h3>狗眼电影</h3>
-          <div>查影讯，上狗眼电影就够了！</div>
+          <h3>看电影不？</h3>
+          <div>过年电影安排一下！</div>
         </div>
       </div>
-      <div class="v-header-input" @click="serch">
-        <input class="v-inp" type="text" v-model.trim="query" placeholder="请输入电影名"></input>
-      </div>
+     <!-- <div class="v-header-input" @click="serch">
+        <input class="v-inp" type="text" v-model.trim="query" placeholder="数据由豆瓣提供"></input>
+      </div> -->
     </div>
     <div class="v-nav-bar">
       <router-link to="/inTheaters" class="v-nav">正在热映</router-link>
