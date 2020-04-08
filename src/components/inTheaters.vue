@@ -11,14 +11,14 @@
               <star :score="item.rating.average"></star>
               <p>{{ item.rating.average }}分</p>
               <p>导演:{{ item.directors[0].name}}</p>
-              <p>
-                主演:{{ item.casts[0].name}}
+              <p v-if="item.casts[0]">
+                主演:{{ item.casts[0].name }}
                 <span v-if="item.casts[1]">, {{ item.casts[1].name }}</span>
               </p>
             </div>
           </div>
         </div>
-      </div>      
+      </div>
     </div>
     <spinner v-if='guodu'></spinner>
   </div>
@@ -50,6 +50,7 @@ export default {
           this.in_theaters_data = response
           this.in_theaters_data_body = response.body
           this.in_theaters_data_body_subjects = response.body.subjects
+          console.log(response.body.subjects)
         })
         .catch(function (response) {
           console.log(response)
